@@ -16,7 +16,7 @@
   "author": "MightyPart & Alex",
   "license": "ISC",
   "scripts": {
-    "build": "tsc ./src/"
+    "build": "tsc"
   },
   "devDependencies": {
     "typescript": "^5.3.2"
