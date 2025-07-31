@@ -26,15 +26,15 @@ export const RobloxProvider = (options: RobloxProviderOptions) => {
     name: 'Roblox',
     type: 'oauth',
     wellKnown: 'https://apis.roblox.com/oauth/.well-known/openid-configuration',
-    authorization: { params: { scope: SCOPES.join(' '), redirect_uri: REDIRECT_URI } },
+    authorization: { url: "https://apis.roblox.com/oauth/v1/authorize", params: { scope: SCOPES.join(' '), redirect_uri: REDIRECT_URI } },
+    userinfo: "https://apis.roblox.com/oauth/v1/userinfo",
     idToken: true,
     checks: CHECKS,
-
+    token: "https://apis.roblox.com/oauth/v1/token",
     client: {
       authorization_signed_response_alg: 'ES256',
       id_token_signed_response_alg: 'ES256',
     },
-
     profile(profile: any) {
       return {
         type: 'roblox',
@@ -57,7 +57,7 @@ export const RobloxProviderJwtCallback = async (token: any, user: any) => {
   token.id = user.id;
   token.robloxId = user.robloxId
   token.name = user.name,
-  token.displayName = user.displayName
+    token.displayName = user.displayName
   token.picture = user.picture
   token.type = "roblox"
 

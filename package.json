@@ -21,10 +21,6 @@
   "devDependencies": {
     "typescript": "^5.3.2"
   },
-  "compilerOptions": {
-    "module": "ES6",
-    "target": "ESNext"
-  },
   "files": [
     "dist/**/*",
     "src/**/*"
